@@ -1,18 +1,14 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.procrastinationfighter.ideaannotator</id>
-    <name>idea-annotator</name>
+    <name>Idea-Annotator</name>
     <vendor>procrastinationfighter</vendor>
 
     <depends>com.intellij.modules.platform</depends>
+    <depends optional="true"
+             config-file="annotatorPlugin-withKotlin.xml">org.jetbrains.kotlin</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.procrastinationfighter.ideaannotator.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.procrastinationfighter.ideaannotator.services.MyProjectService"/>
+        <annotator language="JAVA" implementationClass="com.github.procrastinationfighter.ideaannotator.JavaDependencyAnnotator"/>
     </extensions>
-
-    <applicationListeners>
-        <listener class="com.github.procrastinationfighter.ideaannotator.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
-    </applicationListeners>
 </idea-plugin>

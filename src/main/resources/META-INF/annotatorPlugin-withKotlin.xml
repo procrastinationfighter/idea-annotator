@@ -1,0 +1,6 @@
+<idea-plugin>
+    <extensions defaultExtensionNs="com.intellij">
+        <annotator language="kotlin"
+                   implementationClass="com.github.procrastinationfighter.ideaannotator.KotlinCommentAnnotator"/>
+    </extensions>
+</idea-plugin>
